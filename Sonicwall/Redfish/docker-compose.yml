@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  redfish-exporter:
+    image: mrlhansen/idrac_exporter:latest
+    container_name: redfish-exporter
+    ports:
+      - "9348:9348"
+    volumes:
+      - ./idrac-config.yml:/etc/prometheus/idrac-config.yml:ro
+

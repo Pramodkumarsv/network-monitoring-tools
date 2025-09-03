@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  ntopng:
+    image: ntop/ntopng:latest
+    container_name: ntopng
+    restart: unless-stopped
+    ports:
+      - "3001:3000"      # Web UI
+      - "2055:2055/udp"  # NetFlow / AppFlow from SonicWall
+    environment:
+      - TZ=Asia/Kolkata
+    volumes:
+      - ntopng-data:/var/lib/ntopng
+
+volumes:
+  ntopng-data:

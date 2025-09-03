@@ -1,0 +1,6 @@
+hosts:
+  - name: dell-server
+    address: 10.20.40.10
+    username: pramod
+    password: PRamod@solum
+    insecure: true   # skips SSL verification if cert is self-signed
